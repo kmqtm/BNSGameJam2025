@@ -53,8 +53,6 @@ void Player::SetupAnimations()
 	anim_controller_.AddAnimation(U"dead", dead_animation);
 
 	Animation ending_animation;
-	ending_animation.texture_asset_names = {}
-	; // 大量なので見やすく改行して代入
 	ending_animation.texture_asset_names = {
 		U"player_end1",U"player_end2",U"player_end3",U"player_end4",U"player_end5",
 		U"player_end6",U"player_end7",U"player_end8",U"player_end9",U"player_end10",
@@ -126,7 +124,6 @@ void Player::OnSwimPressed()
 	// swim時に酸素を少し消費
 	ModifyOxygen(-kOxygenSwimCost);
 
-	// 効果音は非同期ロード次第で再生されるため、呼び出しは安全
 	sound_controller_.Play(U"water_craw", false);
 }
 

@@ -39,7 +39,7 @@ void CollisionSystem::ResolveCollisions()
 		return;
 	}
 
-	// Player vs Other の O(N) 衝突判定
+	// Player vs OtherのO(N)衝突判定
 	for(auto& other_entry : other_colliders_)
 	{
 		if(!other_entry.collider)

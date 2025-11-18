@@ -21,7 +21,7 @@ GameScene::GameScene(const App::Scene::InitData& init)
 	camera_manager_.SetTargetY(player_.GetPos().y);
 	camera_manager_.SetYOffsetRatio(kTitleEndingCameraOffsetYRatio);
 
-	//イントロBGMを再生開始（準備ができるまで保留して毎フレームチェック）
+	//イントロBGMを再生開始(準備ができるまで保留して毎フレームチェック)
 	StartOrDeferBGM(U"deepsea_intro", false);
 }
 
@@ -44,7 +44,7 @@ void GameScene::StartOrDeferBGM(const String& asset, bool loop)
 	{
 		bgm_controller_.Play(asset, loop);
 		current_playing_bgm_asset_ = asset;
-		// clear pending
+
 		pending_bgm_asset_.clear();
 		pending_bgm_loop_ = false;
 		return;
@@ -119,7 +119,7 @@ void GameScene::UpdateBGM()
 				StartOrDeferBGM(U"deepsea", true);
 			}
 		}
-		// else: introまだ準備できてない／再生されてない -> 待つ
+		// else: introまだ準備できてないor再生されてない -> 待つ
 	}
 
 	// プレイヤーが死んだらBGMを停止
@@ -240,7 +240,7 @@ void GameScene::update()
 			collision_manager_.RegisterOther(&spot_collider, oxygen_id_offset + static_cast<uint32_t>(i));
 		}
 
-		// Player vs Other の衝突判定を実行（O(N)）
+		// Player vs Other の衝突判定を実行: O(N)
 		collision_manager_.ResolveCollisions();
 
 		camera_manager_.SetYOffsetRatio(kPlayingCameraOffsetYRatio);
@@ -353,7 +353,7 @@ void GameScene::draw() const
 	const Vec2 camera_offset = camera_manager_.GetCameraOffset();
 	const RectF view_rect = camera_manager_.GetViewRect();
 
-	// ヘルパー関数：背景を簡単に描画（プレイヤーの近くにいる場合のみ）
+	// ヘルパー関数: 背景を簡単に描画(プレイヤーの近くにいる場合のみ)
 	const double render_distance = stage_.GetTileSize() * 12; // 12マス分の距離
 	const Vec2 player_pos = player_.GetPos();
 

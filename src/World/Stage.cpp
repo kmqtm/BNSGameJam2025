@@ -1,6 +1,6 @@
 ﻿#include "../Core/Utility.h"
 #include "SpawnInfo.h"
-# include "Stage.h"
+#include "Stage.h"
 
 #include <cmath>
 #include <Siv3D.hpp>

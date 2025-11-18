@@ -47,7 +47,6 @@ void OxygenSpot::UpdateColliderCenter()
 				   {
 					   shape.setCenter(pos_);
 				   }
-				   // 他の形状タイプには対応していないが，必要ならここに追加
 			   }, collider_.shape);
 }
 

@@ -54,7 +54,7 @@ Enemy::Enemy(const String& type, const Vec2& center_pos)
 	// physics
 	physics_size_ = Vec2{ static_cast<double>(spec.physics_size.x), static_cast<double>(spec.physics_size.y) };
 
-	// movement 初期化（以前は behavior_ 判定、今は spec.behavior を直接使用）
+	// movement
 	collision_offset_ = spec.collision_offset;
 	if(spec.behavior == EnemyDataSystem::BehaviorKind::Patrol)
 	{
@@ -83,7 +83,7 @@ Enemy::Enemy(const String& type, const Vec2& center_pos)
 		anim_controller_.AddAnimation(name, ToAnimation(animSpec));
 	}
 
-	// 初期再生
+	// animationの初期再生
 	if(spec.behavior == EnemyDataSystem::BehaviorKind::Stationary)
 	{
 		if(spec.animations.contains(U"idle"))

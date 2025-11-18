@@ -5,7 +5,7 @@ namespace
 {
 	using namespace s3d;
 
-	// UI 定数（GameScene から移設）
+	// UI 定数
 	constexpr Vec2  kOxygenGaugePos{ 20, 20 };
 	constexpr Size  kOxygenGaugeSize{ 24, 200 };
 	constexpr ColorF kUIGaugeBackgroundColor{ 0.0, 0.5 };

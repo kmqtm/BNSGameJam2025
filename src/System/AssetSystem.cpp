@@ -36,7 +36,7 @@ static AssetSystem::LoadMode ParseLoadModeFromJson(const JSON& j)
 	return AssetSystem::LoadMode::Auto;
 }
 
-// Extract the asset file name (or "path") from a JSON entry which may be a string or an object.
+// stringあるいはobjectのpath要素からアセットファイル名を取得する
 static String ParseAssetFileNameFromJson(const JSON& entry)
 {
 	if(entry.isString())
@@ -73,7 +73,6 @@ void AssetSystem::PrepareAssets(const String& scene_name)
 	{
 		for(const auto& file_name_json : asset_json_[current_scene_name_][asset_type])
 		{
-			// parse load mode and file name in a helper to reduce nesting
 			AssetSystem::LoadMode mode = ParseLoadModeFromJson(file_name_json.value);
 
 			const String asset_file_name = ParseAssetFileNameFromJson(file_name_json.value);
@@ -141,7 +140,7 @@ void AssetSystem::UnregisterAssets()
 
 bool AssetSystem::IsSceneAssetsReady()
 {
-	// より読みやすく: pending_assets_ を走査して未完了のみを残す
+	// pending_assets_を走査して未完了のみを残す
 	Array<std::pair<String, String>> remaining;
 	remaining.reserve(pending_assets_.size());
 
@@ -187,25 +186,18 @@ void AssetSystem::RegisterAndLoadAsset(const String& asset_type, const String& a
 {
 	const String asset_base_name = FileSystem::BaseName(asset_filepath);
 
-	// Determine mode if Auto
+	// LoadModeがAutoの場合でのアセットタイプごとのモード指定
 	if(mode == AssetSystem::LoadMode::Auto)
 	{
-		// Simple heuristic: textures and sounds => Async, fonts => Sync
 		if(asset_type == U"Texture" || asset_type == U"Sound")
 		{
 			mode = AssetSystem::LoadMode::Async;
 		}
-		else
+		else // Fontなどその他のアセットはSync
 		{
 			mode = AssetSystem::LoadMode::Sync;
 		}
 	}
-
-	// small lambda to centralize registered_assets_ push
-	auto markRegistered = [&](const String& type, const String& name)
-		{
-			registered_assets_.push_back({ type, name });
-		};
 
 	if(asset_type == U"Font")
 	{
@@ -228,7 +220,7 @@ void AssetSystem::RegisterAndLoadAsset(const String& asset_type, const String& a
 			FontAsset::Load(asset_base_name);
 		}
 
-		markRegistered(asset_type, asset_base_name);
+		registered_assets_.push_back({ asset_type, asset_base_name });
 	}
 	else if(asset_type == U"Sound")
 	{
@@ -244,7 +236,7 @@ void AssetSystem::RegisterAndLoadAsset(const String& asset_type, const String& a
 			AudioAsset::Load(asset_base_name);
 		}
 
-		markRegistered(asset_type, asset_base_name);
+		registered_assets_.push_back({ asset_type, asset_base_name });
 	}
 	else if(asset_type == U"Texture")
 	{
@@ -260,6 +252,6 @@ void AssetSystem::RegisterAndLoadAsset(const String& asset_type, const String& a
 			TextureAsset::Load(asset_base_name);
 		}
 
-		markRegistered(asset_type, asset_base_name);
+		registered_assets_.push_back({ asset_type, asset_base_name });
 	}
 }

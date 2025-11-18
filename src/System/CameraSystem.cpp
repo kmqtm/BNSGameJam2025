@@ -29,7 +29,7 @@ double CameraSystem::ComputeGoalY() const
 	return target_y_ + y_offset_;
 }
 
-// 補間ヘルパー（線形補間）
+// 補間ヘルパー(線形補間)
 double CameraSystem::SmoothTo(double current, double goal, double factor) const
 {
 	return Math::Lerp(current, goal, factor);
@@ -48,7 +48,7 @@ Vec2 CameraSystem::HalfViewSize() const
 
 void CameraSystem::Update()
 {
-	// 目標Yを計算し、現在値を滑らかに更新
+	// 目標Yを計算し，現在値を滑らかに更新
 	const double goal_y = ComputeGoalY();
 	current_y_ = SmoothTo(current_y_, goal_y, 0.05);
 

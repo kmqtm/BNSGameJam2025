@@ -61,7 +61,6 @@ const JSON& EnemyDataSystem::GetData(const String& type) const
 		return kEmptyJSON;
 	}
 
-	// "enemies" キーからデータを取得
 	const auto& enemies = enemy_data_[U"enemies"];
 
 	// 指定されたタイプが存在するか確認
