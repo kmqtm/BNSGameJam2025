@@ -184,9 +184,12 @@ void Player::MoveX(const Stage& stage)
 	if(velocity_.x > 0)
 	{
 		double sensor_x = next_x + kPhysicsHalfWidth;
+		double sensor_y_mid = pos_.y;
+
+		// タイルの境界線での引っかかりを防止するために+-1.0でセンサーを少し内側に入れる
 		double sensor_y_top = pos_.y - kPhysicsHalfHeight + 1.0;
 		double sensor_y_bot = pos_.y + kPhysicsHalfHeight - 1.0;
-		double sensor_y_mid = pos_.y;
+
 
 		if(stage.IsSolid(sensor_x, sensor_y_top) || stage.IsSolid(sensor_x, sensor_y_mid) || stage.IsSolid(sensor_x, sensor_y_bot))
 		{

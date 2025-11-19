@@ -126,6 +126,7 @@ private:
 	static constexpr double kPhysicsHalfHeight = 62.0;
 
 	// 敵との当たり判定(Collider)用のサイズ
+	// Playerの見た目上の胴体部に合わせており，物理判定より意図的に小さく設定
 	static constexpr double kColliderWidth = 60.0;
 	static constexpr double kColliderHeight = 80.0;
 
@@ -134,12 +135,12 @@ private:
 	static constexpr Vec2 kEndingDrawOffset = { 96.0, 128.0 };
 
 	// 物理パラメータ
-	double horizontal_accel_{ 0.6 };
-	double horizontal_speed_max_{ 1.3 };
+	double horizontal_accel_{ 0.6 };			// 水平移動時の加速度
+	double horizontal_speed_max_{ 1.3 };		// 水平移動の最大速度
 	double friction_{ 0.90 };					// 水平方向の抵抗係数(1.0が無抵抗)
-	double gravity_ = 0.06;
-	double swim_power_ = -1.8;					// 水中での上昇力
+	double gravity_ = 0.06;						// 重力加速度
 	double terminal_velocity_y_ = 1.0;			// Y軸の終端速度
+	double swim_power_ = -1.8;					// 水中での上昇力
 	double rising_gravity_multiplier_ = 0.4;	// 上昇時の重力軽減倍率(0.0で無重力)
 
 	double oxygen_{ 100.0 };		// 酸素量(体力と同義)

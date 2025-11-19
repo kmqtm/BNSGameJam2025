@@ -124,6 +124,7 @@ private:
 	double ending_start_time_ = -1.0;
 
 	/// @brief エンディング開始から笑顔に切り替わるまでの時間(秒)
+	/// 7.0(Player::kEndingAnimationDelaySec) + 8.6(タコのアニメーション時間)
 	static constexpr double kOctopusSmileDelay = 7.0 + 8.6;
 
 	/// @brief 笑顔後の画面暗転アルファ値
