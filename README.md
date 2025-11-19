@@ -1,4 +1,4 @@
-﻿# 作品名 シンカイサンタ
+﻿# 作品名: シンカイサンタ
 
 ![C++](https://img.shields.io/badge/Language-C%2B%2B20-00599C?style=flat-square)
 ![Framework](https://img.shields.io/badge/GameEngine-Siv3D-E34F26?style=flat-square)
