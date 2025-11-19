@@ -1,7 +1,7 @@
 ﻿# 作品名 シンカイサンタ
 
 ![C++](https://img.shields.io/badge/Language-C%2B%2B20-00599C?style=flat-square)
-![Framework](https://img.shields.io/badge/Framework-Siv3D-E34F26?style=flat-square)
+![Framework](https://img.shields.io/badge/GameEngine-Siv3D-E34F26?style=flat-square)
 ![Status](https://img.shields.io/badge/Status-Completed-success?style=flat-square)
 
 **拡張性と保守性に優れる2D深海探索アクションゲーム．**
