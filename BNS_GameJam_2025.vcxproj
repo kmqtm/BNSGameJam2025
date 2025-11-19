@@ -320,6 +320,7 @@
     <None Include="App\example\toml\test.toml" />
     <None Include="App\example\zip\zip_test.zip" />
     <None Include="App\asset\EnemyData.json" />
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="App\example\shot.mp3" />

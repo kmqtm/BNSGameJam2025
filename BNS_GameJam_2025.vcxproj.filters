@@ -770,6 +770,7 @@
     <None Include="App\asset\Stage\v2\tilemap_v2.json" />
     <None Include="App\asset\Stage\v1\tilemap.json" />
     <None Include="App\asset\EnemyData.json" />
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="App\example\test.mp3">
