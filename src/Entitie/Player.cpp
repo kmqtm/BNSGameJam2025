@@ -510,13 +510,13 @@ void Player::HandleCollisions()
 		}
 	}
 
-	// 敵との衝突処理（1回のみ）
+	// 敵との衝突処理(1回のみ)
 	if(has_enemy_collision && not is_invincible_)
 	{
 		TakeDamage();
 	}
 
-	// 酸素回復処理（1回のみ）
+	// 酸素回復処理(1回のみ)
 	if(has_oxygen_collision)
 	{
 		RecoverOxygen();

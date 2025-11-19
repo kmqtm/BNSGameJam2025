@@ -362,7 +362,7 @@ void GameScene::draw() const
 			// 各背景オブジェクトを識別するためのユニークキーを生成
 			const String unique_key = U"{}_{:.1f}_{:.1f}"_fmt(texture_name, center_pos.x, center_pos.y);
 
-			// プレイヤーとの距離をチェック（初期位置で）
+			// プレイヤーとの距離をチェック(初期位置で)
 			const double distance = player_pos.distanceFrom(center_pos);
 
 			// プレイヤーが範囲内に入った場合、アクティブ化時刻を記録
@@ -391,7 +391,7 @@ void GameScene::draw() const
 				// 波の揺れを追加
 				if(isWave)
 				{
-					const double wave_amplitude = 1.0; // 揺れの振幅（ピクセル）
+					const double wave_amplitude = 1.0; // 揺れの振幅(ピクセル)
 					const double wave_frequency = 1.0; // 揺れの速さ
 					animated_pos.y += Math::Sin(elapsed_time * wave_frequency) * wave_amplitude;
 				}
@@ -458,7 +458,7 @@ void GameScene::draw() const
 		TextureAsset(U"title").draw(title_screen_pos);
 	}
 
-	// エンディング座標にoctopusを描画（背景の直後、他のオブジェクトより前）
+	// エンディング座標にoctopusを描画(背景の直後、他のオブジェクトより前)
 	{
 		// エンディング開始から8.4秒後に笑顔へ切り替え
 		const bool showSmile = (current_state_ == GameState::Ending)

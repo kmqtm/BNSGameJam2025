@@ -151,9 +151,9 @@ private:
 	static constexpr double kEndingAnimationDelaySec = 7.0;
 
 	// エンディング中のx軸ワープ制御
-	double ending_target_x_ = 0.0;			// 目標x（ワールド座標）
+	double ending_target_x_ = 0.0;			// 目標x(ワールド座標)
 	bool ending_warp_enabled_ = false;		// ワープ処理中ならtrue
-	double ending_warp_lerp_ = 0.01;		// Lerpファクター（1.0で即時ワープ）
+	double ending_warp_lerp_ = 0.01;		// Lerpファクター(1.0で即時ワープ)
 	double ending_snap_threshold_ = 1.0;	// この距離以下でスナップ
 
 	static constexpr double kMaxOxygen = 100.0;

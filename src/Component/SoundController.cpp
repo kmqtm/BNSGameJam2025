@@ -12,7 +12,7 @@ void SoundController::Play(const String& asset_name, bool loop)
 		return;
 	}
 
-	// 登録はされているが準備(ロード)が完了していない場合は再生しない（非同期ロードの完了を待つ）
+	// 登録はされているが準備(ロード)が完了していない場合は再生しない(非同期ロードの完了を待つ)
 	if(not AudioAsset::IsReady(asset_name))
 	{
 		// 非ブロッキング: まだロードされていないので再生リクエストを無視
