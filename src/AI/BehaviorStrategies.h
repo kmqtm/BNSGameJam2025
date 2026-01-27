@@ -7,7 +7,7 @@
 
 #include "IBehaviorStrategy.h"
 
-/// @brief その場から動かない敵の行動戦略
+/// @brief その場から動かない
 class StationaryBehavior final : public IBehaviorStrategy
 {
 public:
@@ -17,7 +17,7 @@ public:
 	void Update(Enemy& enemy, const Stage& stage) override;
 };
 
-/// @brief 左右に巡回する敵の行動戦略
+/// @brief 左右に巡回する
 class PatrolBehavior final : public IBehaviorStrategy
 {
 public:
@@ -27,7 +27,7 @@ public:
 	void Update(Enemy& enemy, const Stage& stage) override;
 };
 
-/// @brief 一定距離前後に往復する敵の行動戦略
+/// @brief 一定距離前後に往復する
 class BackAndForthBehavior final : public IBehaviorStrategy
 {
 public:
