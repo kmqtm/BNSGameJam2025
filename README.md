@@ -16,7 +16,7 @@
 ## 技術的なこだわり
 本作品の制作にあたって注力した設計上の工夫を一部紹介します．
 
-### 1. StrategyパターンによるAI設計
+### 1. Strategyパターンを用いた敵の行動設計
 敵キャラクターの行動ロジックを `IBehaviorStrategy` インターフェースとして分離して実装しました．
 `Enemy` クラス本体を変更することなく，新しい行動パターンを容易に追加できる設計となっています．
 
@@ -29,14 +29,14 @@
 * Code: [`src/System/EnemyDataSystem.cpp`](src/System/EnemyDataSystem.cpp)
 * Data: [`App/asset/EnemyData.json`](App/asset/EnemyData.json)
 
-### 3. 責務の分離とシステムアーキテクチャ
+### 3. 責務の分離
 「単一責任の原則」を意識し，機能ごとにクラスが独立するように設計しました．
 `GameScene` が肥大化するのを防ぎ，各システムの結合度を下げています．
 分離後の各クラスは改良の余地が認められますが，基本的な設計方針として有効であると考えています．
 
-* CollisionSystem: エンティティ間の衝突判定管理
-* CameraSystem: カメラのプレイヤー追従と座標変換
-* UISystem: 縦スクロールの進行度やステータスに応じたUI描画の管理
+### 4. その他の工夫点(概要)
+* ComponentとEntityの分離: ゲーム内のオブジェクト([`Entity`](src/Entity))が持ちうる要素を[`Component`](src/Component)として独立させ，複数のオブジェクトで再利用可能にしました．
+* Stageに配置するオブジェクトの自動配置等: [`Tiled`](https://www.mapeditor.org/)というマップエディタを用いてステージを設計し，Exportしたファイルを読み取るようにしました．これによって，ステージのタイル絵や衝突判定，オブジェクトの配置等を自動化できました．
 
 ## 📂 ディレクトリ構成 (主要ファイルのみ抜粋)
 ```text
@@ -44,10 +44,10 @@ Root
 ├── AI/                 # Strategyパターンによる敵の行動ロジック
 │   ├── IBehaviorStrategy.h
 │   └── BehaviorStrategies.cpp
-├── Component/          # ゲームオブジェクトに持たせる要素
+├── Component/          # オブジェクトに持たせる要素
 │   ├── Collider.h      # 衝突判定用の構造体等
 │   └── AnimationController.cpp
-├── Entitie/            # ゲームオブジェクト
+├── Entitie/            # ゲーム内のオブジェクト
 │   ├── Player.cpp      # 物理/状態等の管理
 │   └── Enemy.cpp
 ├── System/             # 単一で動作するシステム群
