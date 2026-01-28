@@ -425,6 +425,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Entity\Enemy.cpp" />
+    <ClCompile Include="src\Entity\OxygenSpot.cpp" />
+    <ClCompile Include="src\Entity\Player.cpp" />
     <ClCompile Include="src\System\AssetSystem.cpp" />
     <ClCompile Include="src\System\CameraSystem.cpp" />
     <ClCompile Include="src\Core\Config.cpp" />
@@ -447,6 +450,9 @@
     <ClCompile Include="src\World\Stage.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Entity\Enemy.h" />
+    <ClInclude Include="src\Entity\OxygenSpot.h" />
+    <ClInclude Include="src\Entity\Player.h" />
     <ClInclude Include="src\System\AssetSystem.h" />
     <ClInclude Include="src\System\CameraSystem.h" />
     <ClInclude Include="src\Core\Config.h" />
