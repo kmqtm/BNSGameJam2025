@@ -1,4 +1,4 @@
-﻿#include "../Entitie/Enemy.h"
+﻿#include "../Entity/Enemy.h"
 #include "../World/Stage.h"
 #include "BehaviorStrategies.h"
 #include <cmath>

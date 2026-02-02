@@ -5,9 +5,9 @@
 
 #include "../Component/SoundController.h"
 #include "../Core/Config.h"
-#include "../Entitie/Enemy.h"
-#include "../Entitie/OxygenSpot.h"
-#include "../Entitie/Player.h"
+#include "../Entity/Enemy.h"
+#include "../Entity/OxygenSpot.h"
+#include "../Entity/Player.h"
 #include "../System/CameraSystem.h"
 #include "../System/CollisionSystem.h"
 #include "../System/UISystem.h"

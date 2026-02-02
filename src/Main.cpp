@@ -16,8 +16,8 @@ void Main()
 	Graphics::SetVSyncEnabled(false);
 
 	// FPS固定のためのストップウォッチ
-	Stopwatch FPS_SW;
-	FPS_SW.start();
+	Stopwatch fps_stopwatch;
+	fps_stopwatch.start();
 
 	// シーンマネージャーを作成
 	App manager;
@@ -36,8 +36,8 @@ void Main()
 		}
 
 		// 1/60秒が経過するまでループ
-		while(FPS_SW.msF() < 1000.0 / 60) {}
+		while(fps_stopwatch.msF() < 1000.0 / 60) {}
 		//ストップウォッチをリスタート
-		FPS_SW.restart();
+		fps_stopwatch.restart();
 	}
 }
