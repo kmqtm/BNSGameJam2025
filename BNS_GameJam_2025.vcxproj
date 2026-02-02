@@ -435,9 +435,6 @@
     <ClCompile Include="src\AI\BehaviorStrategies.cpp" />
     <ClCompile Include="src\Component\AnimationController.cpp" />
     <ClCompile Include="src\Component\SoundController.cpp" />
-    <ClCompile Include="src\Entitie\Enemy.cpp" />
-    <ClCompile Include="src\Entitie\OxygenSpot.cpp" />
-    <ClCompile Include="src\Entitie\Player.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\System\EnemyDataSystem.cpp" />
     <ClCompile Include="src\pch\stdafx.cpp">
@@ -462,10 +459,7 @@
     <ClInclude Include="src\Component\AnimationController.h" />
     <ClInclude Include="src\Component\Collider.h" />
     <ClInclude Include="src\Component\SoundController.h" />
-    <ClInclude Include="src\Entitie\Enemy.h" />
     <ClInclude Include="src\AI\IBehaviorStrategy.h" />
-    <ClInclude Include="src\Entitie\OxygenSpot.h" />
-    <ClInclude Include="src\Entitie\Player.h" />
     <ClInclude Include="src\System\EnemyDataSystem.h" />
     <ClInclude Include="src\pch\stdafx.h" />
     <ClInclude Include="src\Scene\GameScene.h" />
